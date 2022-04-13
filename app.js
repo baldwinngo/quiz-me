@@ -3,6 +3,7 @@ const currentQuestion = document.querySelector('.question');
 const currentChoiceA = document.querySelector('#choiceA');
 const currentChoiceB = document.querySelector('#choiceB');
 const submit = document.querySelector('.quiz-submit');
+const scoreText = document.querySelector('.score-text');
 
 let questions = [
   'Who is the better waifu?', 
@@ -18,15 +19,22 @@ let answers = ['A', 'A', 'A', 'B'];
 
 let questionCounter = 0
 let answerCounter = 0
+let score = 0
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  // Check if answer is correct
   if (form.radioQuestion.value === answers[answerCounter]){
-    console.log('correct')
+    score += 1;
+    scoreText.textContent = `${score}/${answerCounter + 1}`
   } else {
-    console.log('false')
+    scoreText.textContent =`${score}/${answerCounter + 1}`
   }
+
   answerCounter += 1
+
+  // Update questions
   if (submit.getAttribute('value') === 'Next') {
     
     currentQuestion.textContent = questions[questionCounter];
@@ -41,9 +49,15 @@ form.addEventListener('submit', (e) => {
     
     document.querySelector('input[name="radioQuestion"]:checked').checked = false;
   } else {
-    console.log('done')
-    answerCounter = 0
+    console.log('done');
+    answerCounter = 0 
   } 
   
+  // Update submit button to finished once answerCounter resets back to 0
+  if (answerCounter === 0) {
+    submit.setAttribute('value', 'Finished');
+    submit.setAttribute('disabled', '');
+  }
+
 })
 
