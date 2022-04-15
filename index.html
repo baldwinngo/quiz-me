@@ -4,27 +4,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="output.css">
 </head>
-<body>
-  <div class="hero">
-    <h1>
-      QuizMoi
-    </h1>
-  </div>
-  <div class="quiz-wrapper">
-    <p class="question">Which anime is objectively better?</p>
-    <form class="quiz">
-      <input type="radio" value="A" id="radioA" name="radioQuestion" required>
-      <label class="quiz-label" id="choiceA">Full Metal Alchemist</label>
-      <input type="radio" value="B" id="radioB" name="radioQuestion">
-      <label class="quiz-label" id="choiceB">My Hero Academia</label>
-      <input type="submit" value="Next" class="quiz-submit">
-    </form>
-  </div>
-  <div class="quiz-score">
-    <h2>Current Score: </h2>
-    <p class="score-text">0/0</p>
+<body class="bg-gray-dark">
+  <div class="mx-auto max-w-md bg-gray-light p-4 mt-10">
+    <div class="bg-blue bg-opacity-70 h-20 rounded-md flex items-center">
+      <h1 class="text-3xl text-center mx-auto">
+        QuizMoi
+      </h1>
+    </div>
+    <div class="flex mt-5">
+      <div class="quiz-wrapper w-1/2">
+        <p class="question p-2 bg-orange">Which anime is objectively better?<br></p>
+        <form class="quiz mt-2 p-4 border-2 rounded-xl">
+          <input type="radio" value="A" id="radioA" name="radioQuestion" required>
+          <label class="quiz-label" id="choiceA">Full Metal Alchemist</label><br>
+          <input type="radio" value="B" id="radioB" name="radioQuestion" class="my-3">
+          <label class="quiz-label" id="choiceB">My Hero Academia</label><br>
+          <input type="submit" value="Next" class="quiz-submit bg-blue">
+        </form>
+      </div>
+      <div class="quiz-score ml-5 w-1/2">
+        <h2 class="mt-10 text-center font-semibold">Current Score: </h2>
+        <p class="score-text text-center">0/0</p>
+      </div>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
